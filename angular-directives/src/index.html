@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="main">
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Angular Directives</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body>
+    <div class="container" ng-controller="MainController as vm">
+      <h1>{{vm.title}}</h1>
+      <br/>
+      <display-text></display-text>
+      <br/>
+      <red-box>Red box!</red-box>
+      <br/>
+      <display-name name="Rafael" surname="Souza"></display-name>
+      <br/>Here:
+      <display-address address="JP Street - POA"></display-address>
+    </div>
+   
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- inject:js -->    
+    <!-- endinject -->
+  </body>
+</html>
