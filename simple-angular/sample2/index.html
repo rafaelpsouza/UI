@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+	<head>
+		<meta charset="utf-8" />
+		<title>Angular Sample 2</title>
+		<meta name="description" content="Angular Sample" />
+		<meta name="author" content="Rafael Souza" />
+		<script src="../angular/angular-1.0.1.min.js"></script>
+		<script type="text/javascript">
+			Array.prototype.remove = function(index) {
+				this.splice(index, 1);
+				return this;
+			}
+			
+			function peopleList($scope) {
+				$scope.people = [{
+					id : 1,
+					name : "Pelé",
+					age : "72",
+					nationality : "Brazilian"
+				}, {
+					id : 2,
+					name : "Romário",
+					age : "48",
+					nationality : "Brazilian"
+				}, {
+					id : 3,
+					name : "Cruyff",
+					age : "26",
+					nationality : "Dutch"
+				}, {
+					id : 4,
+					name : "Ronaldo",
+					age : "37",
+					nationality : "Brazilian"
+				}, {
+					id : 5,
+					name : "Messi",
+					age : "24",
+					nationality : "Argentine"
+				}];
+				
+				var currentId = 5;
+				
+				$scope.save = function(user){
+					console.log(user);
+					currentId++;
+					user.id = angular.copy(currentId);
+					$scope.people.push(angular.copy(user));
+				};
+				
+				$scope.remove = function(user){
+					var index = $scope.people.indexOf(user);
+					console.log("User:"+ user + " Index: "+index);
+					$scope.people.remove(index);
+				};
+			}
+		</script>
+	</head>
+
+	<body ng-controller="peopleList">
+		<div>
+			<header>
+				<h1>Angular.js Sample 2</h1>
+			</header>
+			<br/>
+			<form novalidate style="width: 100%;">
+				Name:<br /><input ng-model="user.name" type="text"/><br />
+				Age:<br /><input ng-model="user.age" type="text"/><br />
+				Nationality:<br /><input ng-model="user.nationality" type="text"/><br/>
+				<br/>
+				<button ng-click="save(user)">Save</button>
+			</form>
+			<br />
+			<table border="1">
+				<thead>
+					<tr>
+						<td>ID</td>
+						<td>Name</td>
+						<td>Age</td>
+						<td>Nationality</td>
+						<td>Edit</td>
+						<td>Delete</td>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people">
+						<td>{{person.id}}</td>
+						<td>{{person.name}}</td>
+						<td>{{person.age}}</td>
+						<td>{{person.nationality}}</td>
+						<td><a href="#">Edit</a></td>
+						<td><a href="#" ng-click="remove(person)">Delete</a>
+						<button ng-click="remove(person)">Remove</button></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="6"><b>Total: {{people.length}}</b></td>
+					</tr>
+				</tfoot>
+			</table>
+			<footer>
+				<p>
+					&copy; Copyright  by Rafael Souza
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
