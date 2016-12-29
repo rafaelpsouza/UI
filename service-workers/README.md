@@ -7,4 +7,4 @@
 * [ServiceWorker: A revolução da plataforma Web](https://braziljs.org/blog/service-worker-a-revolucao-da-plataforma-web/)
 * ["Offline": What does it mean and why should I care?](https://www.html5rocks.com/en/tutorials/offline/whats-offline/)
 * [Taking the web offline with service workers](https://mobiforge.com/design-development/taking-web-offline-service-workers)
-
+* [The Cache Interface] (https://developer.mozilla.org/pt-BR/docs/Web/API/Cache)
