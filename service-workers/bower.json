@@ -1,0 +1,25 @@
+{
+  "name": "gulp-angular",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Rafael Souza <rafaelpsouza.eng@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
